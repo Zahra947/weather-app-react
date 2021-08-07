@@ -1,0 +1,165 @@
+h1 {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0% auto;
+  font-family: "Roboto", sans-serif;
+  background-color: #ebf0f6;
+}
+.main {
+  padding: 0%;
+  margin: 5% auto;
+  text-align: center;
+  flex: none;
+}
+.col-left {
+  border: 1px solid #ebf0f6;
+  border-radius: 5%;
+  background-color: #f7f7f7;
+}
+
+.row {
+  justify-content: center;
+}
+.rowleft-1 {
+  margin: 1%;
+}
+.rowleft-2 {
+  border: 1px solid #ebf0f6;
+  border-radius: 8%;
+}
+.rowleft-3 {
+  border: 1px solid #ebf0f6;
+  border-radius: 5%;
+}
+
+.city {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #ebf0f6;
+  border-radius: 5%;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  margin: 2%;
+  color: #00587a;
+  background-color: #fdffcd;
+}
+.citywhether {
+  color: #00587a;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  display: block;
+  text-align: center;
+  border: 1px solid #ebf0f6;
+  padding: 10px;
+  margin: 2%;
+  border-radius: 5%;
+  background-color: #fdffcd;
+}
+.search {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  margin: 1%;
+  color: #00587a;
+  background-color: #fdffcd;
+  text-align: center;
+  border: 1px solid #ebf0f6;
+}
+.width {
+  width: 60%;
+}
+
+.icon {
+  display: block;
+  margin: 0% auto;
+  width: 200px;
+  border: 1px solid #ebf0f6;
+  background-color: #d9f2ff;
+  border-radius: 5%;
+}
+.degree {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  display: block;
+  text-align: center;
+  margin: 0%;
+  color: #00587a;
+  border: 1px solid #ebf0f6;
+  border-radius: 5%;
+  text-decoration: none;
+}
+.max {
+  margin: 5% 0%;
+  color: #00587a;
+  padding: 0%;
+}
+.min {
+  margin: 5% 0%;
+  color: #00587a;
+  padding: 0%;
+  opacity: 0.6;
+}
+
+.col-right {
+  border: 1px solid #ebf0f6;
+  border-radius: 5%;
+  background-color: #f7f7f7;
+}
+.rowright-1 {
+  border: 1px solid #ebf0f6;
+  border-radius: 5%;
+}
+.next {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: #007cb9;
+  margin: 3% 1% 5% 1%;
+  font-weight: bold;
+}
+.days {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  display: block;
+  text-align: center;
+  margin: 2% 0%;
+  color: #00587a;
+}
+.daysDeg {
+  margin: 5% 0%;
+}
+.sat {
+  color: #00587a;
+  padding: 0%;
+}
+.sunny {
+  width: 70px;
+  font-family: "Roboto", sans-serif;
+  padding: 0%;
+  background-color: #d9f2ff;
+}
+
+.bottom-line {
+  color: black;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  padding: 0%;
+}
+.degree .active {
+  color: #00587a;
+  text-decoration: none;
+  cursor: default;
+}
+.degree .active:hover {
+  text-decoration: none;
+}
+.form {
+  margin: 2% auto;
+  border: #ebf0f6;
+}
