@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <div className="contaiiner">
         Weather App
-        <Weather />
+        <Weather city="New York" />
         This is the first app with react
       </div>
     </div>

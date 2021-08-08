@@ -2,62 +2,73 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
+export default function Weather(props) {
   const [ready, setReady] = useState(false);
-  const [temp, setTemp] = useState(null);
+  const [weatherData, setWeatherData] = useState({});
 
   function handleResponse(response) {
-    setTemp(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+      ready: true,
+      date: "Wednesday",
+      temp: response.data.main.temp,
+      wind: response.data.main.wind.speed,
+      humidity: response.data.main.humidity,
+      decription: response.data.weather[0].description,
+      city: response.data.name,
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
-      <div class="row main">
-        <div class="col-6 col-left">
-          <div class="rowleft-2">
-            <div class="col">
-              <form class="form" id="search-form">
+      <div className="row main">
+        <div className="col-6 col-left">
+          <div className="rowleft-2">
+            <div className="col">
+              <form className="form" id="search-form">
                 <input
-                  class="search width"
+                  className="search width"
                   type="search"
                   placeholder="Enter name of the city"
                   id="cityInput"
                   autocomplete="off"
                   autofocus="on"
                 />
-                <input class="search" type="submit" value="Search" />
-                <button class="search" id="current-location">
+                <input className="search" type="submit" value="Search" />
+                <button className="search" id="current-location">
                   current
                 </button>
               </form>
             </div>
           </div>
-          <div class="row">
-            <div class="col-6 rowleft-2">
-              <div class="row city">
-                <h2 id="city">Tehran</h2>
+          <div className="row">
+            <div className="col-6 rowleft-2">
+              <div className="row city">
+                <h2 id="city">{weatherData.city}</h2>
               </div>
-              <div class="row city">Last update:</div>
-              <div class="row city" id="currentDay"></div>
-              <div class="row citywhether" id="description"></div>
-              <div class="row rowleft-2 citywhether">
-                Wind: <span id="wind">4</span> Km/h
+              <div className="row city">Last update:{weatherData.date} </div>
+              <div className="row city" id="currentDay">
+                {Math.round(weatherData.temp)}
+              </div>
+              <div className="row citywhether" id="description">
+                {weatherData.decription}{" "}
+              </div>
+              <div className="row rowleft-2 citywhether">
+                Wind: <span id="wind">{weatherData.wind}</span> Km/h
                 <br />
-                Humidity:<span id="humidity">5</span> %
+                Humidity:<span id="humidity">{weatherData.humidity}</span> %
               </div>
             </div>
-            <div class="col-6 rowleft-3">
-              <div class="row icon">
-                <img src="" alt="" class="icon" id="icon" />
+            <div className="col-6 rowleft-3">
+              <div className="row icon">
+                <img src="" alt="" className="icon" id="icon" />
               </div>
-              <div class="row degree" id="temperature"></div>
-              <div class="row degree">
-                <a href="/" id="celsius-link" class="active">
+              <div className="row degree" id="temperature"></div>
+              <div className="row degree">
+                <a href="/" id="celsius-link" className="active">
                   °C
                 </a>
               </div>
-              <div class="row degree">
+              <div className="row degree">
                 <a href="/" id="fahrenheit-link">
                   °F
                 </a>
@@ -65,17 +76,17 @@ export default function Weather() {
             </div>
           </div>
         </div>
-        <div class="col-3 col-right">
-          <div class="row" id="forecast">
-            <div class="col-4 days"></div>
-            <div class="col-4 daysDeg sat">
+        <div className="col-3 col-right">
+          <div className="row" id="forecast">
+            <div className="col-4 days"></div>
+            <div className="col-4 daysDeg sat">
               <h1>°C</h1>
-              <span class="max"></span>/<span class="min"></span>°C
+              <span className="max"></span>/<span className="min"></span>°C
             </div>
-            <div class="col-4 sunny"></div>
+            <div className="col-4 sunny"></div>
           </div>
         </div>
-        <div class="bottom-line">
+        <div className="bottom-line">
           <a href="https://github.com/Zahra947/weather-app" target="-blank">
             Open-Source Code
           </a>
@@ -85,9 +96,10 @@ export default function Weather() {
       </div>
     );
   } else {
-    const city = "New York";
     const apiKey = "9e426d3dc7d76c6df8a50964d68d9730";
-    const apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
+
+    return "Loading..";
   }
 }
