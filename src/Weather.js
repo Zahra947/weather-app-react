@@ -9,7 +9,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      date: "Wednesday",
+      date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
       wind: response.data.main.wind.speed,
       humidity: response.data.main.humidity,
@@ -45,7 +45,10 @@ export default function Weather(props) {
               <div className="row city">
                 <h2 id="city">{weatherData.city}</h2>
               </div>
-              <div className="row city">Last update:{weatherData.date} </div>
+              <div className="row city">
+                Last update:
+                <formattedDate date={weatherData.date} />{" "}
+              </div>
               <div className="row city" id="currentDay">
                 {Math.round(weatherData.temp)}
               </div>
