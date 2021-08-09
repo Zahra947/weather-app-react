@@ -4,8 +4,7 @@ import "./Weather.css";
 import formattedDate from "./formattedDate";
 
 export default function Weather(props) {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     setWeatherData({
