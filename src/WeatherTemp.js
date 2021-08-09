@@ -6,18 +6,18 @@ export default function WeatherTemp(props) {
 
   function showFaren(event) {
     event.preventDefault();
-    setUnit();
+    setUnit("farenheit");
   }
 
   function showCelsuis(event) {
     event.preventDefault();
-    setUnit();
+    setUnit("celsius");
   }
 
-  function fahrenheit() {
-    return (fahrenheit = (props.celsious * 9) / 5 + 32);
+  function farenheit() {
+    return (props.celsius * 9) / 5 + 32;
   }
-  if (unit === celsious) {
+  if (unit === "celsius") {
     return (
       <div>
         <div className="row degree">
@@ -43,7 +43,7 @@ export default function WeatherTemp(props) {
             className="active"
             onChange={showCelsuis}
           >
-            {Math.round(fahrenheit())}
+            {Math.round(farenheit())}
             °C
           </a>
         </div>
