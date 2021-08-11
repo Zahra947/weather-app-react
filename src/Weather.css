@@ -76,9 +76,7 @@ body {
 .canvas {
   display: block;
   margin: 0% auto;
-  width: 200px;
-  border: 1px solid #ebf0f6;
-  background-color: #d9f2ff;
+  border: 1px #ebf0f6;
   border-radius: 5%;
 }
 .degree {

@@ -18,7 +18,7 @@ export default function WeatherInfo(props) {
           <div className="row city" id="currentDay">
             {Math.round(props.data.temp)}
           </div>
-          <div className="row citywhether" id="description">
+          <div className="row citywhether text-capitalize" id="description">
             {props.data.decription}{" "}
           </div>
           <div className="row rowleft-2 citywhether">
@@ -40,7 +40,6 @@ export default function WeatherInfo(props) {
         </a>
         by Zahra Rabiei
       </div>
-      <script src="src/script.js"></script>
     </div>
   );
 }
