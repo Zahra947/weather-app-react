@@ -9,25 +9,31 @@ export default function WeatherTemp(props) {
     setUnit("farenheit");
   }
 
-  function showCelsuis(event) {
+  function showCelsius(event) {
     event.preventDefault();
     setUnit("celsius");
   }
 
-  function farenheit() {
-    return (props.celsius * 9) / 5 + 32;
+  function Farenheit() {
+    return Math.round(props.celsius * 9) / 5 + 32;
   }
   if (unit === "celsius") {
     return (
       <div>
         <div className="row degree">
-          <a href="/" id="celsius-link" className="active">
-            {Math.round(props.celsious)}
+          <span>
+            {Math.round(props.celsius)}
+            <br />
             °C
-          </a>
+          </span>
         </div>
         <div className="row degree">
-          <a href="/" id="fahrenheit-link" onChange={showFaren}>
+          <a
+            href="/"
+            id="fahrenheit-link"
+            className="active"
+            onClick={showFaren}
+          >
             °F
           </a>
         </div>
@@ -41,16 +47,15 @@ export default function WeatherTemp(props) {
             href="/"
             id="celsius-link"
             className="active"
-            onChange={showCelsuis}
+            onClick={showCelsius}
           >
-            {Math.round(farenheit())}
+            {Math.round(Farenheit())}
+            <br />
             °C
           </a>
         </div>
         <div className="row degree">
-          <a href="/" id="fahrenheit-link">
-            °F
-          </a>
+          <span>°F</span>
         </div>
       </div>
     );
