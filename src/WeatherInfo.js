@@ -1,5 +1,5 @@
 import React from "react";
-import formattedDate from "./formattedDate";
+import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 
@@ -13,7 +13,7 @@ export default function WeatherInfo(props) {
           </div>
           <div className="row city">
             Last update:
-            <formattedDate date={props.data.date} />{" "}
+            <FormattedDate date={props.data.date} />{" "}
           </div>
           <div className="row city" id="currentDay">
             {Math.round(props.data.temp)}
@@ -22,31 +22,21 @@ export default function WeatherInfo(props) {
             {props.data.decription}{" "}
           </div>
           <div className="row rowleft-2 citywhether">
-            Wind: <span id="wind">{props.data.wind}</span> Km/h
+            Wind: <span id="wind">{Math.round(props.data.wind)}</span> Km/h
             <br />
             Humidity:<span id="humidity">{props.data.humidity}</span> %
           </div>
         </div>
         <div className="col-6 rowleft-3">
-          <WeatherIcon code={props.data.icon} />
+          <WeatherIcon code={props.data.icon} size={52} />
           <div className="row degree" id="temperature">
             <WeatherTemp celsius={props.data.temp} />
           </div>
         </div>
       </div>
-      <div className="col-3 col-right">
-        <div className="row" id="forecast">
-          <div className="col-4 days"></div>
-          <div className="col-4 daysDeg sat">
-            <h1>°C</h1>
-            <span className="max"></span>/<span className="min"></span>°C
-          </div>
-          <div className="col-4 sunny"></div>
-        </div>
-      </div>
       <div className="bottom-line">
         <a href="https://github.com/Zahra947/weather-app-react" target="-blank">
-          Open-Source Code
+          Open-Source Code{" "}
         </a>
         by Zahra Rabiei
       </div>

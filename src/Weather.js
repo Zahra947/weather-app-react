@@ -12,9 +12,9 @@ export default function Weather(props) {
       ready: true,
       date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
-      wind: response.data.main.wind.speed,
+      wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: response.data.weather[0].code,
+      icon: response.data.weather[0].icon,
       decription: response.data.weather[0].description,
       city: response.data.name,
     });
@@ -22,7 +22,7 @@ export default function Weather(props) {
   function search() {
     //call api based on the input name of city
     const apiKey = "9e426d3dc7d76c6df8a50964d68d9730";
-    const apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -50,8 +50,8 @@ export default function Weather(props) {
                   type="search"
                   placeholder="Enter name of the city"
                   id="cityInput"
-                  autocomplete="off"
-                  autofocus="on"
+                  autoComplete="off"
+                  autoFocus="on"
                   onChange={handleCityChange}
                 />
                 <input className="search" type="submit" value="Search" />
