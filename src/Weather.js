@@ -18,6 +18,7 @@ export default function Weather(props) {
       icon: response.data.weather[0].icon,
       decription: response.data.weather[0].description,
       city: response.data.name,
+      coordinates: response.data.coord,
     });
   }
   function search() {
@@ -63,6 +64,7 @@ export default function Weather(props) {
             </div>
           </div>
           <WeatherInfo data={weatherData} />
+          <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
         <div className="col-3 col-right">
           <WeatherForecast />
