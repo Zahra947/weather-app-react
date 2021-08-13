@@ -9,12 +9,11 @@ export default function WeatherForecast(props) {
   function handleResponse(response) {
     //console.log(response.data);
     // to stroe and get daily data from api:
-    setLoaded(true);
     setForecast(response.data.daily);
+    setLoaded(true);
   }
 
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="row" id="forecast">
         <WeatherForecastDay data={forecast[0]} />
