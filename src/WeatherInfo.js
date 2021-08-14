@@ -35,7 +35,11 @@ export default function WeatherInfo(props) {
         </div>
       </div>
       <div className="bottom-line">
-        <a href="https://github.com/Zahra947/weather-app-react" target="-blank">
+        <a
+          href="https://github.com/Zahra947/weather-app-react"
+          target="-blank"
+          ref="noopener referrer"
+        >
           Open-Source Code{" "}
         </a>
         by Zahra Rabiei
