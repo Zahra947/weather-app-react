@@ -20,7 +20,7 @@ export default function WeatherForecastDay(props) {
   }
 
   return (
-    <div>
+    <div className="forecast">
       <div className="col-sm-12 days"> {day()}</div>
       <div className="col-sm-12 daysDeg">
         <span className="max">{maxTemp()} </span>

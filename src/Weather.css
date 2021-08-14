@@ -164,3 +164,8 @@ body {
 .weather {
   padding: 40%;
 }
+.forecast {
+  border: 3px solid #ebf0f6;
+  border-radius: 5%;
+  margin-top: 5%;
+}
