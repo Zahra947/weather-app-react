@@ -19,43 +19,25 @@ export default function WeatherTemp(props) {
   }
   if (unit === "celsius") {
     return (
-      <div>
-        <div className="row degree">
-          <span>
-            {Math.round(props.celsius)}
-            <br />
-            °C
-          </span>
-        </div>
-        <div className="row degree">
-          <a
-            href="/"
-            id="fahrenheit-link"
-            className="active"
-            onClick={showFaren}
-          >
-            °F
+      <div className="row degree">
+        <div>
+          <span>{Math.round(props.celsius)}</span>
+          <div>°C</div>
+          <a href="/" className="active" onClick={showFaren}>
+            <div>°F</div>
           </a>
         </div>
       </div>
     );
   } else {
     return (
-      <div>
-        <div className="row degree">
-          <a
-            href="/"
-            id="celsius-link"
-            className="active"
-            onClick={showCelsius}
-          >
-            {Math.round(Farenheit())}
-            <br />
-            °C
+      <div className="row degree">
+        <div>
+          <a href="/" className="active" onClick={showCelsius}>
+            <span>{Math.round(Farenheit())} </span>
+            <div>°C</div>
           </a>
-        </div>
-        <div className="row degree">
-          <span>°F</span>
+          <div>°F</div>
         </div>
       </div>
     );

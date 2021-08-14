@@ -7,7 +7,7 @@ export default function WeatherInfo(props) {
   return (
     <div>
       <div className="row">
-        <div className="col-6 rowleft-2">
+        <div className="col-sm-6 rowleft-2">
           <div className="row city">
             <h2 id="city">{props.data.city}</h2>
           </div>
@@ -27,7 +27,7 @@ export default function WeatherInfo(props) {
             Humidity:<span id="humidity">{props.data.humidity}</span> %
           </div>
         </div>
-        <div className="col-6 rowleft-3">
+        <div className="col-sm-6 rowleft-3">
           <WeatherIcon code={props.data.icon} size={160} />
           <div className="row degree" id="temperature">
             <WeatherTemp celsius={props.data.temp} />
